@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Thu Sep 17 10:10:08 COT 2020:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.12.1.1 - (1704137): instance a816c00e-0174-9c9d-9a3f-00001179f680 
+on database directory /home/woombatcg/Desktop/GitDesarrollo/Ingesta_spark/metastore_db with class loader org.apache.spark.sql.hive.client.IsolatedClientLoader$$anon$1@7be457ec 
+Loaded from file:/home/woombatcg/anaconda3/lib/python3.8/site-packages/pyspark/jars/derby-10.12.1.1.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_252-b09
+user.dir=/home/woombatcg/Desktop/GitDesarrollo/Ingesta_spark
+os.name=Linux
+os.arch=amd64
+os.version=3.10.0-1127.10.1.el7.x86_64
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''

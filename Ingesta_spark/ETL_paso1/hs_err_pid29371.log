@@ -1,0 +1,356 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 130023424 bytes for committing reserved memory.
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   In 32 bit mode, the process size limit was hit
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Use 64 bit Java on a 64 bit OS
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (os_linux.cpp:2640), pid=29371, tid=0x00007ff441be2700
+#
+# JRE version:  (8.0_181-b13) (build )
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (25.181-b13 mixed mode linux-amd64 compressed oops)
+# Failed to write core dump. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007ff43801c000):  JavaThread "Unknown thread" [_thread_in_vm, id=29422, stack(0x00007ff441ae3000,0x00007ff441be3000)]
+
+Stack: [0x00007ff441ae3000,0x00007ff441be3000],  sp=0x00007ff441be1380,  free space=1016k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0xad21aa]  VMError::report_and_die()+0x2ba
+V  [libjvm.so+0x5022db]  report_vm_out_of_memory(char const*, int, unsigned long, VMErrorType, char const*)+0x8b
+V  [libjvm.so+0x92fe33]  os::Linux::commit_memory_impl(char*, unsigned long, bool)+0x123
+V  [libjvm.so+0x930059]  os::pd_commit_memory(char*, unsigned long, unsigned long, bool)+0x29
+V  [libjvm.so+0x9272ba]  os::commit_memory(char*, unsigned long, unsigned long, bool)+0x2a
+V  [libjvm.so+0x99d2e3]  PSVirtualSpace::expand_by(unsigned long)+0x53
+V  [libjvm.so+0x98d3f7]  PSOldGen::initialize(ReservedSpace, unsigned long, char const*, int)+0xb7
+V  [libjvm.so+0x2dc1ea]  AdjoiningGenerations::AdjoiningGenerations(ReservedSpace, GenerationSizer*, unsigned long)+0x39a
+V  [libjvm.so+0x951426]  ParallelScavengeHeap::initialize()+0x1d6
+V  [libjvm.so+0xa9a1e3]  Universe::initialize_heap()+0xf3
+V  [libjvm.so+0xa9a74e]  universe_init()+0x3e
+V  [libjvm.so+0x644875]  init_globals()+0x65
+V  [libjvm.so+0xa7eefe]  Threads::create_vm(JavaVMInitArgs*, bool*)+0x23e
+V  [libjvm.so+0x6d8d74]  JNI_CreateJavaVM+0x74
+C  [libjli.so+0x797e]  JavaMain+0x9e
+C  [libpthread.so.0+0x7ea5]  start_thread+0xc5
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+
+Other Threads:
+
+=>0x00007ff43801c000 (exited) JavaThread "Unknown thread" [_thread_in_vm, id=29422, stack(0x00007ff441ae3000,0x00007ff441be3000)]
+
+VM state:not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+Events (0 events):
+No events
+
+
+Dynamic libraries:
+00400000-00401000 r-xp 00000000 fd:00 101735004                          /usr/java/jdk1.8.0_181-cloudera/bin/java
+00600000-00601000 rw-p 00000000 fd:00 101735004                          /usr/java/jdk1.8.0_181-cloudera/bin/java
+00a1f000-00a40000 rw-p 00000000 00:00 0                                  [heap]
+70e800000-782400000 ---p 00000000 00:00 0 
+782400000-786200000 rw-p 00000000 00:00 0 
+786200000-7c0000000 ---p 00000000 00:00 0 
+7ff429000000-7ff429270000 rwxp 00000000 00:00 0 
+7ff429270000-7ff438000000 ---p 00000000 00:00 0 
+7ff438000000-7ff438045000 rw-p 00000000 00:00 0 
+7ff438045000-7ff43c000000 ---p 00000000 00:00 0 
+7ff43e64c000-7ff43e8d7000 rw-p 00000000 00:00 0 
+7ff43e8d7000-7ff43ecb3000 ---p 00000000 00:00 0 
+7ff43ecb3000-7ff43ecd2000 rw-p 00000000 00:00 0 
+7ff43ecd2000-7ff43eea1000 ---p 00000000 00:00 0 
+7ff43eea1000-7ff43eeac000 rw-p 00000000 00:00 0 
+7ff43eeac000-7ff43f262000 ---p 00000000 00:00 0 
+7ff43f262000-7ff43f27d000 r-xp 00000000 fd:00 35093516                   /usr/java/jdk1.8.0_181-cloudera/jre/lib/amd64/libzip.so
+7ff43f27d000-7ff43f47d000 ---p 0001b000 fd:00 35093516                   /usr/java/jdk1.8.0_181-cloudera/jre/lib/amd64/libzip.so
+7ff43f47d000-7ff43f47e000 rw-p 0001b000 fd:00 35093516                   /usr/java/jdk1.8.0_181-cloudera/jre/lib/amd64/libzip.so
+7ff43f47e000-7ff43f48a000 r-xp 00000000 fd:00 36611                      /usr/lib64/libnss_files-2.17.so
+7ff43f48a000-7ff43f689000 ---p 0000c000 fd:00 36611                      /usr/lib64/libnss_files-2.17.so
+7ff43f689000-7ff43f68a000 r--p 0000b000 fd:00 36611                      /usr/lib64/libnss_files-2.17.so
+7ff43f68a000-7ff43f68b000 rw-p 0000c000 fd:00 36611                      /usr/lib64/libnss_files-2.17.so
+7ff43f68b000-7ff43f691000 rw-p 00000000 00:00 0 
+7ff43f691000-7ff43f6bc000 r-xp 00000000 fd:00 35093450                   /usr/java/jdk1.8.0_181-cloudera/jre/lib/amd64/libjava.so
+7ff43f6bc000-7ff43f8bb000 ---p 0002b000 fd:00 35093450                   /usr/java/jdk1.8.0_181-cloudera/jre/lib/amd64/libjava.so
+7ff43f8bb000-7ff43f8bd000 rw-p 0002a000 fd:00 35093450                   /usr/java/jdk1.8.0_181-cloudera/jre/lib/amd64/libjava.so
+7ff43f8bd000-7ff43f8ca000 r-xp 00000000 fd:00 35093515                   /usr/java/jdk1.8.0_181-cloudera/jre/lib/amd64/libverify.so
+7ff43f8ca000-7ff43faca000 ---p 0000d000 fd:00 35093515                   /usr/java/jdk1.8.0_181-cloudera/jre/lib/amd64/libverify.so
+7ff43faca000-7ff43facc000 rw-p 0000d000 fd:00 35093515                   /usr/java/jdk1.8.0_181-cloudera/jre/lib/amd64/libverify.so
+7ff43facc000-7ff43fad3000 r-xp 00000000 fd:00 36623                      /usr/lib64/librt-2.17.so
+7ff43fad3000-7ff43fcd2000 ---p 00007000 fd:00 36623                      /usr/lib64/librt-2.17.so
+7ff43fcd2000-7ff43fcd3000 r--p 00006000 fd:00 36623                      /usr/lib64/librt-2.17.so
+7ff43fcd3000-7ff43fcd4000 rw-p 00007000 fd:00 36623                      /usr/lib64/librt-2.17.so
+7ff43fcd4000-7ff43fdd5000 r-xp 00000000 fd:00 36601                      /usr/lib64/libm-2.17.so
+7ff43fdd5000-7ff43ffd4000 ---p 00101000 fd:00 36601                      /usr/lib64/libm-2.17.so
+7ff43ffd4000-7ff43ffd5000 r--p 00100000 fd:00 36601                      /usr/lib64/libm-2.17.so
+7ff43ffd5000-7ff43ffd6000 rw-p 00101000 fd:00 36601                      /usr/lib64/libm-2.17.so
+7ff43ffd6000-7ff440cb2000 r-xp 00000000 fd:00 101735130                  /usr/java/jdk1.8.0_181-cloudera/jre/lib/amd64/server/libjvm.so
+7ff440cb2000-7ff440eb2000 ---p 00cdc000 fd:00 101735130                  /usr/java/jdk1.8.0_181-cloudera/jre/lib/amd64/server/libjvm.so
+7ff440eb2000-7ff440f8c000 rw-p 00cdc000 fd:00 101735130                  /usr/java/jdk1.8.0_181-cloudera/jre/lib/amd64/server/libjvm.so
+7ff440f8c000-7ff440fd7000 rw-p 00000000 00:00 0 
+7ff440fd7000-7ff44119a000 r-xp 00000000 fd:00 36593                      /usr/lib64/libc-2.17.so
+7ff44119a000-7ff44139a000 ---p 001c3000 fd:00 36593                      /usr/lib64/libc-2.17.so
+7ff44139a000-7ff44139e000 r--p 001c3000 fd:00 36593                      /usr/lib64/libc-2.17.so
+7ff44139e000-7ff4413a0000 rw-p 001c7000 fd:00 36593                      /usr/lib64/libc-2.17.so
+7ff4413a0000-7ff4413a5000 rw-p 00000000 00:00 0 
+7ff4413a5000-7ff4413a7000 r-xp 00000000 fd:00 36599                      /usr/lib64/libdl-2.17.so
+7ff4413a7000-7ff4415a7000 ---p 00002000 fd:00 36599                      /usr/lib64/libdl-2.17.so
+7ff4415a7000-7ff4415a8000 r--p 00002000 fd:00 36599                      /usr/lib64/libdl-2.17.so
+7ff4415a8000-7ff4415a9000 rw-p 00003000 fd:00 36599                      /usr/lib64/libdl-2.17.so
+7ff4415a9000-7ff4415bf000 r-xp 00000000 fd:00 35093619                   /usr/java/jdk1.8.0_181-cloudera/lib/amd64/jli/libjli.so
+7ff4415bf000-7ff4417be000 ---p 00016000 fd:00 35093619                   /usr/java/jdk1.8.0_181-cloudera/lib/amd64/jli/libjli.so
+7ff4417be000-7ff4417bf000 rw-p 00015000 fd:00 35093619                   /usr/java/jdk1.8.0_181-cloudera/lib/amd64/jli/libjli.so
+7ff4417bf000-7ff4417d6000 r-xp 00000000 fd:00 36619                      /usr/lib64/libpthread-2.17.so
+7ff4417d6000-7ff4419d5000 ---p 00017000 fd:00 36619                      /usr/lib64/libpthread-2.17.so
+7ff4419d5000-7ff4419d6000 r--p 00016000 fd:00 36619                      /usr/lib64/libpthread-2.17.so
+7ff4419d6000-7ff4419d7000 rw-p 00017000 fd:00 36619                      /usr/lib64/libpthread-2.17.so
+7ff4419d7000-7ff4419db000 rw-p 00000000 00:00 0 
+7ff4419db000-7ff4419fd000 r-xp 00000000 fd:00 36586                      /usr/lib64/ld-2.17.so
+7ff441ae2000-7ff441ae6000 ---p 00000000 00:00 0 
+7ff441ae6000-7ff441be7000 rw-p 00000000 00:00 0 
+7ff441bee000-7ff441bf1000 rw-p 00000000 00:00 0 
+7ff441bf1000-7ff441bf9000 rw-s 00000000 fd:00 71123198                   /tmp/hsperfdata_root/29371
+7ff441bf9000-7ff441bfa000 rw-p 00000000 00:00 0 
+7ff441bfa000-7ff441bfb000 r--p 00000000 00:00 0 
+7ff441bfb000-7ff441bfc000 rw-p 00000000 00:00 0 
+7ff441bfc000-7ff441bfd000 r--p 00021000 fd:00 36586                      /usr/lib64/ld-2.17.so
+7ff441bfd000-7ff441bfe000 rw-p 00022000 fd:00 36586                      /usr/lib64/ld-2.17.so
+7ff441bfe000-7ff441bff000 rw-p 00000000 00:00 0 
+7ffdeac08000-7ffdeac2e000 rw-p 00000000 00:00 0                          [stack]
+7ffdeac52000-7ffdeac54000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]
+
+VM Arguments:
+jvm_args: -Dproc_fs -Djava.net.preferIPv4Stack=true -Djava.net.preferIPv4Stack=true -Dyarn.log.dir=/opt/cloudera/parcels/CDH-6.3.2-1.cdh6.3.2.p0.1605554/lib/hadoop/logs -Dyarn.log.file=hadoop.log -Dyarn.home.dir=/opt/cloudera/parcels/CDH-6.3.2-1.cdh6.3.2.p0.1605554/lib/hadoop/libexec/../../hadoop-yarn -Dyarn.root.logger=INFO,console -Djava.library.path=/opt/cloudera/parcels/CDH-6.3.2-1.cdh6.3.2.p0.1605554/lib/hadoop/lib/native -Dhadoop.log.dir=/opt/cloudera/parcels/CDH-6.3.2-1.cdh6.3.2.p0.1605554/lib/hadoop/logs -Dhadoop.log.file=hadoop.log -Dhadoop.home.dir=/opt/cloudera/parcels/CDH-6.3.2-1.cdh6.3.2.p0.1605554/lib/hadoop -Dhadoop.id.str=root -Dhadoop.root.logger=INFO,console -Dhadoop.policy.file=hadoop-policy.xml -Dhadoop.security.logger=INFO,NullAppender 
+java_command: org.apache.hadoop.fs.FsShell -copyFromLocal /home/proyectos/archivos/sfc/CE018-2019/PG110/2020/09/Validos/PRGE100211330919_1.txt /landing/tmp/Principales/ARCHIVOS/PG110/2020/09/
+java_class_path (initial): /opt/cloudera/parcels/CDH-6.3.2-1.cdh6.3.2.p0.1605554/lib/spark/conf/yarn-conf:/opt/cloudera/parcels/CDH-6.3.2-1.cdh6.3.2.p0.1605554/lib/hadoop/lib/audience-annotations-0.5.0.jar:/opt/cloudera/parcels/CDH-6.3.2-1.cdh6.3.2.p0.1605554/lib/hadoop/lib/aws-java-sdk-bundle-1.11.271.jar:/opt/cloudera/parcels/CDH-6.3.2-1.cdh6.3.2.p0.1605554/lib/hadoop/lib/log4j-core-2.8.2.jar:/opt/cloudera/parcels/CDH-6.3.2-1.cdh6.3.2.p0.1605554/lib/hadoop/lib/jaxb-impl-2.2.3-1.jar:/opt/cloudera/parcels/CDH-6.3.2-1.cdh6.3.2.p0.1605554/lib/hadoop/lib/htrace-core4-4.1.0-incubating.jar:/opt/cloudera/parcels/CDH-6.3.2-1.cdh6.3.2.p0.1605554/lib/hadoop/lib/kerb-util-1.0.0.jar:/opt/cloudera/parcels/CDH-6.3.2-1.cdh6.3.2.p0.1605554/lib/hadoop/lib/commons-beanutils-1.9.4.jar:/opt/cloudera/parcels/CDH-6.3.2-1.cdh6.3.2.p0.1605554/lib/hadoop/lib/jetty-util-9.3.25.v20180904.jar:/opt/cloudera/parcels/CDH-6.3.2-1.cdh6.3.2.p0.1605554/lib/hadoop/lib/commons-lang3-3.7.jar:/opt/cloudera/parcels/CDH-6.3.2-1.cdh6.3.2.p0.1605554/lib/hadoop/lib/commons-logging-1.1.3.jar:/opt/cloudera/parcels/CDH-6.3.2-1.cdh6.3.2.p0.1605554/lib/hadoop/lib/kerby-util-1.0.0.jar:/opt/cloudera/parcels/CDH-6.3.2-1.cdh6.3.2.p0.1605554/lib/hadoop/lib/curator-client-2.12.0.jar:/opt/cloudera/parcels/CDH-6.3.2-1.cdh6.3.2.p0.1605554/lib/hadoop/lib/curator-framework-2.12.0.jar:/opt/cloudera/parcels/CDH-6.3.2-1.cdh6.3.2.p0.1605554/lib/hadoop/lib/paranamer-2.8.jar:/opt/cloudera/parcels/CDH-6.3.2-1.cdh6.3.2.p0.1605554/lib/hadoop/lib/gson-2.2.4.jar:/opt/cloudera/parcels/CDH-6.3.2-1.cdh6.3.2.p0.1605554/lib/hadoop/lib/commons-codec-1.11.jar:/opt/cloudera/parcels/CDH-6.3.2-1.cdh6.3.2.p0.1605554/lib/hadoop/lib/jackson-annotations-2.9.9.jar:/opt/cloudera/parcels/CDH-6.3.2-1.cdh6.3.2.p0.1605554/lib/hadoop/lib/jackson-core-2.9.9.jar:/opt/cloudera/parcels/CDH-6.3.2-1.cdh6.3.2.p0.1605554/lib/hadoop/lib/asm-5.0.4.jar:/opt/cloudera/parcels/CDH-6.3.2-1.cdh6.3.2.p0.1605554/lib/hadoop/lib/jackson-databind-2.9.9.3.jar:/opt/cloudera/p
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=/usr/java/jdk1.8.0_181-cloudera
+CLASSPATH=/opt/cloudera/parcels/CDH-6.3.2-1.cdh6.3.2.p0.1605554/lib/spark/conf/yarn-conf:/opt/cloudera/parcels/CDH-6.3.2-1.cdh6.3.2.p0.1605554/lib/hadoop/lib/*:/opt/cloudera/parcels/CDH-6.3.2-1.cdh6.3.2.p0.1605554/lib/hadoop/.//*:/opt/cloudera/parcels/CDH-6.3.2-1.cdh6.3.2.p0.1605554/lib/hadoop/libexec/../../hadoop-hdfs/./:/opt/cloudera/parcels/CDH-6.3.2-1.cdh6.3.2.p0.1605554/lib/hadoop/libexec/../../hadoop-hdfs/lib/*:/opt/cloudera/parcels/CDH-6.3.2-1.cdh6.3.2.p0.1605554/lib/hadoop/libexec/../../hadoop-hdfs/.//*:/opt/cloudera/parcels/CDH/lib/hadoop-mapreduce/.//*:/opt/cloudera/parcels/CDH-6.3.2-1.cdh6.3.2.p0.1605554/lib/hadoop/libexec/../../hadoop-yarn/lib/*:/opt/cloudera/parcels/CDH-6.3.2-1.cdh6.3.2.p0.1605554/lib/hadoop/libexec/../../hadoop-yarn/.//*
+PATH=/sbin:/bin:/usr/sbin:/usr/bin
+USERNAME=root
+LD_LIBRARY_PATH=:/opt/cloudera/parcels/CDH-6.3.2-1.cdh6.3.2.p0.1605554/lib/hadoop/lib/native:/opt/cloudera/parcels/CDH-6.3.2-1.cdh6.3.2.p0.1605554/lib/hadoop/lib/native
+SHELL=/bin/bash
+DISPLAY=localhost:10.0
+
+Signal Handlers:
+SIGSEGV: [libjvm.so+0xad2a40], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGBUS: [libjvm.so+0xad2a40], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGFPE: [libjvm.so+0x92a610], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGPIPE: [libjvm.so+0x92a610], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGXFSZ: [libjvm.so+0x92a610], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGILL: [libjvm.so+0x92a610], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGUSR1: SIG_DFL, sa_mask[0]=00000000000000000000000000000000, sa_flags=none
+SIGUSR2: [libjvm.so+0x92be70], sa_mask[0]=00100000000000000000000000000000, sa_flags=SA_RESTART|SA_SIGINFO
+SIGHUP: SIG_DFL, sa_mask[0]=00000000000000000000000000000000, sa_flags=none
+SIGINT: SIG_DFL, sa_mask[0]=00000000000000000000000000000000, sa_flags=none
+SIGTERM: SIG_DFL, sa_mask[0]=00000000000000000000000000000000, sa_flags=none
+SIGQUIT: SIG_DFL, sa_mask[0]=00000000000000000000000000000000, sa_flags=none
+
+
+---------------  S Y S T E M  ---------------
+
+OS:CentOS Linux release 7.8.2003 (Core)
+
+uname:Linux 3.10.0-1127.10.1.el7.x86_64 #1 SMP Wed Jun 3 14:28:03 UTC 2020 x86_64
+libc:glibc 2.17 NPTL 2.17 
+rlimit: STACK 8192k, CORE 0k, NPROC 47282, NOFILE 4096, AS infinity
+load average:0.94 0.45 0.41
+
+/proc/meminfo:
+MemTotal:       12137816 kB
+MemFree:           70624 kB
+MemAvailable:      41244 kB
+Buffers:             340 kB
+Cached:          1177348 kB
+SwapCached:            0 kB
+Active:         10786660 kB
+Inactive:         741340 kB
+Active(anon):   10782740 kB
+Inactive(anon):   735568 kB
+Active(file):       3920 kB
+Inactive(file):     5772 kB
+Unevictable:        8172 kB
+Mlocked:            8172 kB
+SwapTotal:             0 kB
+SwapFree:              0 kB
+Dirty:               136 kB
+Writeback:             0 kB
+AnonPages:      10359804 kB
+Mapped:           462484 kB
+Shmem:           1160316 kB
+Slab:             173628 kB
+SReclaimable:      56028 kB
+SUnreclaim:       117600 kB
+KernelStack:       45488 kB
+PageTables:       166480 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:     6068908 kB
+Committed_AS:   30518696 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:      170948 kB
+VmallocChunk:   34359341052 kB
+Percpu:              800 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:         0 kB
+CmaTotal:              0 kB
+CmaFree:               0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+DirectMap4k:      124864 kB
+DirectMap2M:     9312256 kB
+DirectMap1G:     5242880 kB
+
+
+CPU:total 4 (initial active 4) (2 cores per cpu, 1 threads per core) family 6 model 63 stepping 2, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, lzcnt, tsc, tscinvbit, bmi1, bmi2
+
+/proc/cpuinfo:
+processor	: 0
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 63
+model name	: Intel(R) Xeon(R) CPU E5-2640 v3 @ 2.60GHz
+stepping	: 2
+microcode	: 0x27
+cpu MHz		: 2599.998
+cache size	: 20480 KB
+physical id	: 0
+siblings	: 2
+core id		: 0
+cpu cores	: 2
+apicid		: 0
+initial apicid	: 0
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 15
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon pebs bts nopl xtopology tsc_reliable nonstop_tsc aperfmperf eagerfpu pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm epb invpcid_single fsgsbase tsc_adjust bmi1 avx2 smep bmi2 invpcid xsaveopt dtherm ida arat pln pts
+bogomips	: 5199.99
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 42 bits physical, 48 bits virtual
+power management:
+
+processor	: 1
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 63
+model name	: Intel(R) Xeon(R) CPU E5-2640 v3 @ 2.60GHz
+stepping	: 2
+microcode	: 0x27
+cpu MHz		: 2599.998
+cache size	: 20480 KB
+physical id	: 0
+siblings	: 2
+core id		: 1
+cpu cores	: 2
+apicid		: 1
+initial apicid	: 1
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 15
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon pebs bts nopl xtopology tsc_reliable nonstop_tsc aperfmperf eagerfpu pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm epb invpcid_single fsgsbase tsc_adjust bmi1 avx2 smep bmi2 invpcid xsaveopt dtherm ida arat pln pts
+bogomips	: 5199.99
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 42 bits physical, 48 bits virtual
+power management:
+
+processor	: 2
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 63
+model name	: Intel(R) Xeon(R) CPU E5-2640 v3 @ 2.60GHz
+stepping	: 2
+microcode	: 0x27
+cpu MHz		: 2599.998
+cache size	: 20480 KB
+physical id	: 1
+siblings	: 2
+core id		: 0
+cpu cores	: 2
+apicid		: 2
+initial apicid	: 2
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 15
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon pebs bts nopl xtopology tsc_reliable nonstop_tsc aperfmperf eagerfpu pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm epb invpcid_single fsgsbase tsc_adjust bmi1 avx2 smep bmi2 invpcid xsaveopt dtherm ida arat pln pts
+bogomips	: 5199.99
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 42 bits physical, 48 bits virtual
+power management:
+
+processor	: 3
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 63
+model name	: Intel(R) Xeon(R) CPU E5-2640 v3 @ 2.60GHz
+stepping	: 2
+microcode	: 0x27
+cpu MHz		: 2599.998
+cache size	: 20480 KB
+physical id	: 1
+siblings	: 2
+core id		: 1
+cpu cores	: 2
+apicid		: 3
+initial apicid	: 3
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 15
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon pebs bts nopl xtopology tsc_reliable nonstop_tsc aperfmperf eagerfpu pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm epb invpcid_single fsgsbase tsc_adjust bmi1 avx2 smep bmi2 invpcid xsaveopt dtherm ida arat pln pts
+bogomips	: 5199.99
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 42 bits physical, 48 bits virtual
+power management:
+
+
+
+Memory: 4k page, physical 12137816k(70624k free), swap 0k(0k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (25.181-b13) for linux-amd64 JRE (1.8.0_181-b13), built on Jul  7 2018 00:56:38 by "java_re" with gcc 4.3.0 20080428 (Red Hat 4.3.0-8)
+
+time: Mon Mar  8 16:04:37 2021
+elapsed time: 0 seconds (0d 0h 0m 0s)
+

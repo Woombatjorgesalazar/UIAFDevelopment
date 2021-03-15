@@ -1,0 +1,27 @@
+INSERT INTO dwh_uiaf.dimtipoidentificacion (idtipoidentificacion,	tipoidentificacion,	descripcionidentificacion)
+
+VALUES(1,'Noap','No aplica'),
+(2,'Noho','No homologado'),
+(3,'Nore','No reporta'),
+(4,'Eren','Error en la fuente'),
+(10,'OT ','Otro tipo de identificación'),
+(11,'CU ','Código único de inscripción ante la SFC'),
+(12,'NA ','Sociedad o empresa extranjera sin NIT en Colombia'),
+(13,'RC ','Registro Civil'),
+(14,'TI ','Tarjeta de identidad'),
+(15,'CC ','Cédula de ciudadanía'),
+(16,'TE ','Tarjeta de extranjería'),
+(17,'CE ','Cédula de extranjería'),
+(18,'NIT','NIT (persona natural o persona jurídica)'),
+(19,'PA ','Pasaporte'),
+(20,'DIE','Documento de identificación extranjero'),
+(21,'CD ','Carne Diplomatico'),
+(22,'SE ','Sociedad Extranjera'),
+(23,'FD ','Fideicomiso'),
+(24,'DE ','Documento Extranjero'),
+(25,'AS','Persona mayor de edad no identificada RNEC'),
+(26,'MS','Persona menor de edad no identificada RNEC'),
+(27,'PE','Permiso Especial'),
+(28,'SC','Salvo Conducto'),
+(29,'CN','Certificado Nacido Vivo');
+

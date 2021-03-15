@@ -1,0 +1,132 @@
+
+
+
+create table dimpersona
+(
+    idpersona                       INT                   ,
+    idtipoidentificacion            INT                   ,
+    identificacion                  STRING                ,
+    nombresrazonsocial              STRING                ,
+    fechanacimientocreacion         STRING                ,
+    idactividadeconomica            INT                   ,
+    idtiposgsss                     INT                   ,
+    iddaneresidencia                STRING                ,
+    iddanenacimiento                STRING                ,
+    idroluiaf                       INT                           
+)STORED AS PARQUET ;
+
+create table dimpersonasistema
+(
+    idpersonasistema                INT                   ,
+    idpersona                       INT                           ,
+    idtipoidentificacion            INT                           ,
+    idtipoidentificacionsistema     STRING                        ,
+    identificacion                  STRING                        ,
+    identificacionsistema           STRING                        ,
+    nombresrazonsocial              STRING                        ,
+    nombrerazonsocialsistema        STRING                        ,
+    fechanacimientocreacion         TIMESTAMP                     ,
+    fechanacimientocreaciontransac  TIMESTAMP                     ,
+    idactividadeconomica            INT                           ,
+    idtiposgsss                     INT                           ,
+    tiposgssssitema                 STRING                        ,
+    iddanevive                      STRING                        ,
+    danevivesistema                 STRING                        ,
+    iddanenacimiento                STRING                        ,
+    danenacimientosistema           STRING                        ,
+    idsistema                       INT                           ,
+    idcatalogo                      INT                           ,
+    idfechacargue                   FLOAT                         ,
+    identregasistema                INT                           ,
+    numeroregsistema                INT                           ,
+    estado                          INT                           ,
+    idfechatransaccion              INT                           ,
+    idroluiaf                       INT                           
+)STORED AS PARQUET;
+
+create table dimroluiaf
+(
+    idroluiaf                       INT                  ,
+    roluiaf                         STRING                        
+)STORED AS PARQUET;
+
+
+INSERT INTO dwh_uiaf.dimroluiaf VALUES 
+(1,'No aplica'),
+(2,'No homologado'),
+(3,'No reporta'),
+(4,'Error en la fuente'),
+(10,'Supervisor'),
+(11,'Reportado');
+
+
+
+
+create table dimentidad
+(
+    identidad                    INT                   ,
+    idtipoidentificacionentidad  INT                   ,
+    identificacionentidad        STRING                        ,
+    razonsocial                  STRING                        ,
+    iddaneubicacion              STRING                ,
+    direccion                    STRING                        ,
+    telefono                     STRING                        ,
+    correoelectronico            STRING                        ,
+    fechadecreacion              STRING                        ,
+    identidadprincipal           INT                           ,
+    idactividadeconomica         INT                   
+)stored as parquet;
+
+create table dimentidadsistema
+(
+    identidadsistema             INT                   ,
+    identidad                    INT                  ,
+    idsectorsistema              STRING                ,
+    idtipoidentificacion         INT                   ,
+    identificacionsistema        STRING                        , 
+    iddaneubicacion              STRING                ,
+    direccion                    STRING                        ,
+    direccionsistema             STRING                        ,
+    telefono                     STRING                        ,
+    telefonosistema              STRING                        ,
+    correoelectronico            STRING                        ,
+    correoelectronicosistema     STRING                        ,
+    razonsocial                  STRING                        ,
+    razonsocialsistema           STRING                        ,
+    fechacreacion                STRING                        ,
+    fechacreacionsistema         STRING                        ,
+    identidadprincipal           INT                   ,
+    idactividadeconomica         INT                   ,
+    sectorsistema                INT                           , 
+    tipoentidadsistema           INT                           ,
+    codigoentidadsistema         STRING                        ,
+    fechacargue                  STRING                        ,
+    idcatalogo                   INT                           ,
+    idsistema                    INT                           ,
+    idsector                     INT                           
+)stored as parquet;
+
+create table factentidad
+(
+    idfactentidad                INT                   ,
+    identidad                    INT                           ,
+    idsector                     INT                           ,
+    idpersonasv                  INT                           ,
+    idtipoidentificacionsv       INT                           ,
+    identificacionsv             STRING                        ,
+    nombresrazonsocialsv         STRING                        ,
+    idpersonaoc                  INT                           ,
+    idtipoidentificacionoc       INT                           ,
+    identificacionoc             STRING                        ,
+    nombresrazonsocialoc         STRING                        , 
+    idcatalogo                   INT                           ,
+    idsistema                    INT                           ,
+    idfechacargue                INT                           ,
+    identregatransaccional       INT                           ,
+    numeroregtransaccional       INT                           ,
+    estado                       INT                           ,
+    idfechainiciovigencia        INT                           ,
+    idfechafinvigencia           INT                           
+)stored as parquet;
+
+
